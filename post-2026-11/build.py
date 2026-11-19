@@ -18,7 +18,10 @@ h1.m{font-size:78px}
 .quote{font-family:'Crimson Text',serif;font-size:58px;line-height:1.25;margin-top:auto;margin-bottom:auto}
 .foot{margin-top:auto;padding-top:40px;display:flex;justify-content:space-between;font-size:22px;color:#7d7870;border-top:1px solid #2c2b2e}
 .foot b{color:#f2efe9;font-weight:600}
+.foot span:last-child{white-space:nowrap;margin-left:28px}
 .n{position:absolute;right:100px;top:100px;font-size:24px;color:#7d7870}
+.map{margin-top:36px;width:880px;height:700px;border:1px solid #2c2b2e}
+.cap{font-size:30px;line-height:1.45;color:#d9d5ce;margin-top:30px}
 """
 
 def page(inner, n=None):
@@ -28,6 +31,17 @@ def page(inner, n=None):
 def foot(src):
     return f"<div class='foot'><span>Fonti: {src}</span><span><b>@crudiluca</b> · La linea bianca</span></div>"
 
+import base64
+def mapslide(img, who, cap):
+    b = base64.b64encode((OUT/img).read_bytes()).decode()
+    return f"<div class='who'>{who}</div><img class='map' src='data:image/png;base64,{b}'><div class='cap'>{cap}</div>"
+
+def build(prefix, items, src):
+    for i, x in enumerate(items, 1):
+        inner, fs = x if isinstance(x, tuple) else (x, src)
+        slides[f"{prefix}_{i}"] = page(inner + foot(fs), f"{i}/{len(items)}")
+
+NE = "Natural Earth (pubblico dominio)"
 slides = {}
 
 # 1 ESSEX carousel (Istruttoria)
@@ -39,6 +53,9 @@ E = [
  "<div class='who'>Carmela</div><div class='role'>la giornalista · i fatti</div>"
  "<div class='quote'>Agosto 1819: la baleniera <i>Essex</i> lascia Nantucket. 20 novembre 1820: un capodoglio la sperona e la affonda, "
  "circa 1.500 miglia nautiche a ovest delle Galápagos. Venti uomini restano su tre scialuppe.</div>",
+ (mapslide("mappa_essex.png", "La mappa",
+   "La <i>Essex</i> affonda a ovest delle Galápagos. Le isole della Polinesia sono temute: gli uomini puntano verso la costa del Cile."),
+  NE + " · American Heritage · Smithsonian"),
  "<div class='who'>Carmela</div><div class='role'>la giornalista · la scelta</div>"
  "<div class='quote'>Le isole più vicine, si racconta, sono abitate da cannibali. Scelgono la rotta lunga: circa 2.000 miglia verso il Sud America. "
  "Sopravvivono in otto. Per restare vivi, mangiano i compagni morti. Poi tirano a sorte.</div>",
@@ -55,8 +72,7 @@ E = [
  "<div class='red'>Scrivilo nei commenti.</div>"
  "<div class='body'>Da questa storia Herman Melville trarrà <i>Moby Dick</i>.</div>",
 ]
-for i,inner in enumerate(E,1):
-    slides[f"01_essex_{i}"] = page(inner + foot(SRC1), f"{i}/{len(E)}")
+build("01_essex", E, SRC1)
 
 # 2 EGITTO carousel (Curiosità)
 SRC2 = "Ministero Antichità d’Egitto · HeritageDaily"
@@ -64,9 +80,9 @@ G = [
  "<div class='kick'>Egitto · annuncio del 18 novembre 2026</div>"
  "<h1>Li seppellirono con una lingua d’oro.</h1>"
  "<div class='red'>Per parlare ancora, dopo.</div>",
- "<div class='who'>Il luogo</div>"
- "<div class='quote'>Tell Abu Bellou, governatorato di Monufia. Qui sorgeva l’antica Terenuthis, "
- "all’ingresso orientale dello Wadi El Natrun, tra il delta del Nilo e il deserto.</div>",
+ (mapslide("mappa_egitto.png", "Il luogo",
+   "Tell Abu Bellou, governatorato di Monufia: qui sorgeva l’antica Terenuthis, all’ingresso orientale dello Wadi El Natrun."),
+  NE + " · GEOnet Names Server · HeritageDaily"),
  "<div class='who'>Il numero</div>"
  "<div class='quote'>Centinaia di sepolture e sarcofagi in pietra, in un solo cortile funerario, per lo più del III–II secolo a.C. "
  "Il Consiglio Supremo delle Antichità lo definisce «senza precedenti» per il sito.</div>",
@@ -80,41 +96,34 @@ G = [
  "<div class='red'>Scrivilo nei commenti.</div>"
  "<div class='body'><i>La linea bianca</i> · Saga della Linea Bianca, volume I</div>",
 ]
-for i,inner in enumerate(G,1):
-    slides[f"02_egitto_{i}"] = page(inner + foot(SRC2), f"{i}/{len(G)}")
+build("02_egitto", G, SRC2)
 
 # 3 BOG BODY carousel
 SRC3 = "ITV News · Arkeonews"
-slides["03_istruttoria_1"] = page(
+B = [
     "<div class='kick'>Istruttoria · Belfast, 16 novembre 2026</div>"
     "<h1>Un’inchiesta per una morte di 2.000 anni fa.</h1>"
-    "<div class='red'>Il colpevole non ha nome.</div>"
-    + foot(SRC3), "1/6")
-slides["03_istruttoria_2"] = page(
+    "<div class='red'>Il colpevole non ha nome.</div>",
     "<div class='who'>Carmela</div><div class='role'>la giornalista · i fatti</div>"
     "<div class='quote'>Torbiera vicino a Bellaghy, Irlanda del Nord, 2023. Una ragazza tra i 15 e i 22 anni, Età del Ferro. "
-    "Decapitata da dietro, con una lama. La testa non è mai stata trovata. Il 16 novembre un coroner ha esaminato il caso in un’udienza simulata.</div>"
-    + foot(SRC3), "2/6")
-slides["03_istruttoria_3"] = page(
+    "Decapitata da dietro, con una lama. La testa non è mai stata trovata. Il 16 novembre un coroner ha esaminato il caso in un’udienza simulata.</div>",
+    (mapslide("mappa_irlanda.png", "La mappa",
+      "La torbiera è vicino a Bellaghy, a nord-ovest del Lough Neagh. L’udienza si è tenuta all’Ulster Museum di Belfast."),
+     NE + " · ITV News · Arkeonews"),
     "<div class='who'>Teng</div><div class='role'>il finanziatore</div>"
     "<div class='quote'>Micro-TAC, scansioni 3D, due università, un museo, un coroner. Tutto per una ragazza senza nome. "
-    "Quanto vale la verità su una morte che nessuno potrà più punire?</div>"
-    + foot(SRC3), "3/6")
-slides["03_istruttoria_4"] = page(
+    "Quanto vale la verità su una morte che nessuno potrà più punire?</div>",
     "<div class='who'>George</div><div class='role'>quello che fa domande</div>"
     "<div class='quote'>«Forse un rituale», dicono. Ma chi lo decide che era un rituale? "
-    "E un sacrificio è qualcosa di diverso da un omicidio, se chi uccide è convinto di fare il bene?</div>"
-    + foot(SRC3), "4/6")
-slides["03_istruttoria_5"] = page(
+    "E un sacrificio è qualcosa di diverso da un omicidio, se chi uccide è convinto di fare il bene?</div>",
     "<div class='who'>Diana</div><div class='role'>la più responsabile</div>"
     "<div class='quote'>Sappiamo come è morta. Non sappiamo perché. Il rituale è un’ipotesi, non una prova. "
-    "E il museo racconterà la sua storia senza esporre i suoi resti.</div>"
-    + foot(SRC3), "5/6")
-slides["03_istruttoria_6"] = page(
+    "E il museo racconterà la sua storia senza esporre i suoi resti.</div>",
     "<h1 class='m'>Dove passa la linea tra sacrificio e omicidio?</h1>"
     "<div class='red'>Scrivilo nei commenti.</div>"
-    "<div class='body'><i>La linea bianca</i> · Saga della Linea Bianca, volume I</div>"
-    + foot(SRC3), "6/6")
+    "<div class='body'><i>La linea bianca</i> · Saga della Linea Bianca, volume I</div>",
+]
+build("03_istruttoria", B, SRC3)
 
 with sync_playwright() as p:
     b = p.chromium.launch()
