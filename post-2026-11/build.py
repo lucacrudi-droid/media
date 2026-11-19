@@ -30,25 +30,58 @@ def foot(src):
 
 slides = {}
 
-# 1 ESSEX
-slides["01_essex"] = page(
-    "<div class='kick'>20 novembre 1820 · Oceano Pacifico</div>"
-    "<h1>Avevano paura dei cannibali.</h1>"
-    "<div class='red'>Per questo lo diventarono.</div>"
-    "<div class='body'>Un capodoglio affonda la baleniera <i>Essex</i>. Le isole più vicine, si dice, sono abitate da cannibali. "
-    "I 20 uomini scelgono il continente sudamericano: circa 2.000 miglia di mare aperto. "
-    "Sopravvivono in 8. Per restare vivi, mangiano i compagni morti.</div>"
-    + foot("Smithsonian Magazine · Mass Moments"))
+# 1 ESSEX carousel (Istruttoria)
+SRC1 = "Smithsonian Magazine · Mass Moments"
+E = [
+ "<div class='kick'>Istruttoria · 20 novembre 1820</div>"
+ "<h1>Avevano paura dei cannibali.</h1>"
+ "<div class='red'>Per questo lo diventarono.</div>",
+ "<div class='who'>Carmela</div><div class='role'>la giornalista · i fatti</div>"
+ "<div class='quote'>Agosto 1819: la baleniera <i>Essex</i> lascia Nantucket. 20 novembre 1820: un capodoglio la sperona e la affonda, "
+ "circa 1.500 miglia nautiche a ovest delle Galápagos. Venti uomini restano su tre scialuppe.</div>",
+ "<div class='who'>Carmela</div><div class='role'>la giornalista · la scelta</div>"
+ "<div class='quote'>Le isole più vicine, si racconta, sono abitate da cannibali. Scelgono la rotta lunga: circa 2.000 miglia verso il Sud America. "
+ "Sopravvivono in otto. Per restare vivi, mangiano i compagni morti. Poi tirano a sorte.</div>",
+ "<div class='who'>Teng</div><div class='role'>il finanziatore</div>"
+ "<div class='quote'>La <i>Essex</i> cacciava capodogli per l’olio: un’impresa, con armatori e profitti. "
+ "Chi tiene il conto dei costi, quando il prezzo lo paga l’equipaggio?</div>",
+ "<div class='who'>George</div><div class='role'>quello che fa domande</div>"
+ "<div class='quote'>Qualcuno di loro li aveva mai visti, quei cannibali? O bastava averne sentito parlare? "
+ "E chi ha deciso che il mostro stava sulle isole, e non sulle barche?</div>",
+ "<div class='who'>Diana</div><div class='role'>la più responsabile</div>"
+ "<div class='quote'>Non si giudica chi ha avuto fame per mesi in mare aperto. "
+ "Ma una paura mai verificata ha deciso la rotta di venti uomini.</div>",
+ "<h1 class='m'>Hai mai scelto la strada più lunga per paura di un mostro?</h1>"
+ "<div class='red'>Scrivilo nei commenti.</div>"
+ "<div class='body'>Da questa storia Herman Melville trarrà <i>Moby Dick</i>.</div>",
+]
+for i,inner in enumerate(E,1):
+    slides[f"01_essex_{i}"] = page(inner + foot(SRC1), f"{i}/{len(E)}")
 
-# 2 EGITTO
-slides["02_egitto"] = page(
-    "<div class='kick'>Egitto · annuncio del 18 novembre 2026</div>"
-    "<h1>Li seppellirono con una lingua d’oro.</h1>"
-    "<div class='red'>Per parlare ancora, dopo.</div>"
-    "<div class='body'>Tell Abu Bellou, delta del Nilo. In un solo cortile funerario, centinaia di sepolture e sarcofagi in pietra, "
-    "per lo più del III–II secolo a.C. Tra gli oggetti, lingue d’oro: secondo l’interpretazione più diffusa, "
-    "servivano al defunto per parlare nell’aldilà.</div>"
-    + foot("Ministero Antichità d’Egitto · HeritageDaily"))
+# 2 EGITTO carousel (Curiosità)
+SRC2 = "Ministero Antichità d’Egitto · HeritageDaily"
+G = [
+ "<div class='kick'>Egitto · annuncio del 18 novembre 2026</div>"
+ "<h1>Li seppellirono con una lingua d’oro.</h1>"
+ "<div class='red'>Per parlare ancora, dopo.</div>",
+ "<div class='who'>Il luogo</div>"
+ "<div class='quote'>Tell Abu Bellou, governatorato di Monufia. Qui sorgeva l’antica Terenuthis, "
+ "all’ingresso orientale dello Wadi El Natrun, tra il delta del Nilo e il deserto.</div>",
+ "<div class='who'>Il numero</div>"
+ "<div class='quote'>Centinaia di sepolture e sarcofagi in pietra, in un solo cortile funerario, per lo più del III–II secolo a.C. "
+ "Il Consiglio Supremo delle Antichità lo definisce «senza precedenti» per il sito.</div>",
+ "<div class='who'>Gli oggetti</div>"
+ "<div class='quote'>Lingue d’oro. Un orecchino e un pendente d’oro. Scarabei, statuette funerarie in faience. "
+ "Due sepolture di falchi. Tre statuette di Iside-Afrodite.</div>",
+ "<div class='who'>La lingua</div>"
+ "<div class='quote'>Secondo l’interpretazione più diffusa, serviva al defunto per parlare nell’aldilà. "
+ "E non erano re: le prime analisi indicano persone del ceto medio.</div>",
+ "<h1 class='m'>Se potessi parlare ancora, dopo, cosa diresti?</h1>"
+ "<div class='red'>Scrivilo nei commenti.</div>"
+ "<div class='body'><i>La linea bianca</i> · Saga della Linea Bianca, volume I</div>",
+]
+for i,inner in enumerate(G,1):
+    slides[f"02_egitto_{i}"] = page(inner + foot(SRC2), f"{i}/{len(G)}")
 
 # 3 BOG BODY carousel
 SRC3 = "ITV News · Arkeonews"
