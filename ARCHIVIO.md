@@ -13,3 +13,4 @@ Ogni post viene creato solo dopo il via libera di Luca e archiviato qui, nel ram
 | N. | Data pubblicazione | Tema | File |
 |---|---|---|---|
 | 006 | 26/11/2026 | Carter 1922, la porta sigillata | post-2026-11/06_carter.png |
+| 007 | 20/11/2026 (extra) | Voyager 1 a un giorno-luce | post-2026-11/07_voyager.png |
