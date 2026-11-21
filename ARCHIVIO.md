@@ -14,3 +14,4 @@ Ogni post viene creato solo dopo il via libera di Luca e archiviato qui, nel ram
 |---|---|---|---|
 | 006 | 26/11/2026 | Carter 1922, la porta sigillata | post-2026-11/06_carter.png |
 | 007 | 20/11/2026 (extra) | Voyager 1 a un giorno-luce | post-2026-11/07_voyager.png |
+| 008 | 24/11/2026 18:30 | Filo spinato, brevetto Glidden 24/11/1874 | post-2026-11/08_filospinato.png |
