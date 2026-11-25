@@ -7,14 +7,14 @@ OUT = pathlib.Path(__file__).parent
 SLIDES = [
     {"file": "06_carter_2.png", "n": "2/3",
      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Howard_Carter%2C_Lord_Carnarvon_and_Lady_Evelyn_Herbert_at_Tutankhamen%27s_tomb.jpg",
-     "title": "Novembre 1922. I gradini che scendono verso la tomba.",
+     "title": "Novembre 1922. All’ingresso della tomba appena scoperta.",
      "cap": "Lord Carnarvon, la figlia Lady Evelyn Herbert e Howard Carter all’ingresso della tomba KV62, Valle dei Re.",
      "credit": "Foto Harry Burton, 1922 · Griffith Institute, Oxford · pubblico dominio (Wikimedia Commons)"},
     {"file": "06_carter_3.png", "n": "3/3",
      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Carter_tuttumb.jpg",
-     "title": "Dentro, l’uomo che aveva guardato per primo.",
-     "cap": "Howard Carter al lavoro nella tomba di Tutankhamon.",
-     "credit": "Foto Harry Burton, 1922 · pubblico dominio (Wikimedia Commons)"},
+     "title": "Tre anni dopo, Carter arriva al sarcofago più interno.",
+     "cap": "Tra le bende della mummia lo aspetta il pugnale di ferro.",
+     "credit": "Foto Harry Burton, stagione 1925–26 (datazione: Metropolitan Museum of Art, «Cleaning the Innermost Coffin») · pubblico dominio (Wikimedia Commons)"},
 ]
 
 CSS = """*{margin:0;padding:0;box-sizing:border-box}
@@ -33,8 +33,11 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=1)
     for s in SLIDES:
-        req = urllib.request.Request(s["url"], headers={"User-Agent": "crudiluca-archive/1.0"})
-        data = base64.b64encode(urllib.request.urlopen(req, timeout=60).read()).decode()
+        cache = OUT / ("_cache_" + s["file"].replace(".png", ".jpg"))
+        if not cache.exists():
+            req = urllib.request.Request(s["url"], headers={"User-Agent": "crudiluca-archive/1.0"})
+            cache.write_bytes(urllib.request.urlopen(req, timeout=60).read())
+        data = base64.b64encode(cache.read_bytes()).decode()
         html = f"""<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>
 <div class='top'><span>CURIOSITÀ DISTURBANTE · 006</span><span>{s['n']}</span></div>
 <div class='ph'><img src='data:image/jpeg;base64,{data}'></div>

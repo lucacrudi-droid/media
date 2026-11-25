@@ -12,7 +12,7 @@ Ogni post viene creato solo dopo il via libera di Luca e archiviato qui, nel ram
 ## Indice
 | N. | Data pubblicazione | Tema | File |
 |---|---|---|---|
-| 006 | 26/11/2026 | Carter 1922, la porta sigillata | post-2026-11/06_carter.png |
+| 006 | 26/11/2026 | Carter 1922, la porta sigillata (carosello 3: grafica + 2 foto Burton) | post-2026-11/06_carter.png, 06_carter_2.png, 06_carter_3.png |
 | 007 | 20/11/2026 (extra) | Voyager 1 a un giorno-luce | post-2026-11/07_voyager.png |
 | 008 | 24/11/2026 18:30 | Filo spinato, brevetto Glidden 24/11/1874 | post-2026-11/08_filospinato.png |
 | 009 | 27/11/2026 18:30 | Istruttoria «27 novembre»: Nobel 1895, Mars 2 1971, Osiride 2001 (carosello 9 slide, musica da aggiungere in app) | post-2026-11/09_27novembre_1…9.png, didascalia_09_27novembre.txt |
