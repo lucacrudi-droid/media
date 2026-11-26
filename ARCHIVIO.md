@@ -17,3 +17,5 @@ Ogni post viene creato solo dopo il via libera di Luca e archiviato qui, nel ram
 | 008 | 24/11/2026 18:30 | Filo spinato, brevetto Glidden 24/11/1874 | post-2026-11/08_filospinato.png |
 | 009 | 27/11/2026 18:30 | Istruttoria «27 novembre»: Nobel 1895, Mars 2 1971, Osiride 2001 (carosello 9 slide, musica da aggiungere in app) | post-2026-11/09_27novembre_1…9.png, didascalia_09_27novembre.txt |
 | 010 | 01/12/2026 18:30 | Istruttoria «1° dicembre: Antartide»: Trattato Antartico 1959, Bouvet 1927, Blood Falls (carosello 8 slide con mappa polare, musica da aggiungere in app) | post-2026-12/10_antartide_1…8.png, mappa_antartide.png, didascalia_10_antartide.txt, build_antartide.py (argomento: cartella dati Natural Earth) |
+| 011 | 30/11/2026 18:30 | Mark Twain e la cometa di Halley (immagine singola, musica da aggiungere in app) | post-2026-11/11_twain.png, didascalia_11_twain.txt, build_twain.py |
+| 012 | 02/12/2026 18:30 | Istruttoria «Il navigatore italiano»: Chicago Pile-1, 2/12/1942 (carosello 7 slide, musica da aggiungere in app) | post-2026-12/12_pila_1…7.png, didascalia_12_pila.txt, build_pila.py |
