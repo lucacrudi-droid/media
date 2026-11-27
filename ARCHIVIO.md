@@ -8,6 +8,7 @@ Ogni post viene creato solo dopo il via libera di Luca e archiviato qui, nel ram
   - `didascalia_NN_tema.txt` — testo, fonti, hashtag, data di pubblicazione
   - `build_*.py` — script che rigenera le grafiche (Playwright, font Crimson Text e Inter)
 - `2026/` — post pubblicati prima di questo archivio (001–005)
+- `strumenti/build_reel.py` — trasforma le grafiche 1080×1350 di un post in un Reel verticale 1080×1920 (zoom lento, dissolvenze, traccia audio muta; musica aggiunta da Metricool) più copertina. Dal 27/11/2026 i Reel si archiviano come `NN_tema_reel.mp4` e `NN_tema_reel_cover.jpg` nella cartella del mese.
 
 ## Indice
 | N. | Data pubblicazione | Tema | File |
