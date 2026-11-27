@@ -102,7 +102,7 @@ def photo_cover(photo, rubric, num, kicker, title, red, credit, page=None):
     img.paste(Image.new("RGB", (W, 150), INK), (0, 0), top)
     d = ImageDraw.Draw(img)
     tracked(d, M, 52, rubric.upper(), B_MED(22), PAPER, 5)
-    tracked(d, W - M - tw(d, num, B_MED(22), 5), 52, num, B_MED(22), (230, 120, 125), 5)
+    tracked(d, W - M - tw(d, num, B_MED(22), 5), 52, num, B_MED(22), PAPER, 5)
     if credit:
         cf = B_LIGHT(16)
         cw = d.textlength(credit, font=cf); cx = W - M - cw; cy = ph - 34
@@ -160,7 +160,7 @@ def photo_text_slide(photo, crop, rubric, num, label, sub, body, page=None, quot
     img.paste(Image.new("RGB", (W, 150), INK), (0, 0), top)
     d = ImageDraw.Draw(img)
     tracked(d, M, 52, rubric.upper(), B_MED(22), PAPER, 5)
-    tracked(d, W - M - tw(d, num, B_MED(22), 5), 52, num, B_MED(22), (230, 120, 125), 5)
+    tracked(d, W - M - tw(d, num, B_MED(22), 5), 52, num, B_MED(22), PAPER, 5)
     if credit:
         cf = B_LIGHT(16)
         cw = d.textlength(credit, font=cf); cx = W - M - cw; cy = ph - 34
