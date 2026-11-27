@@ -98,7 +98,7 @@ def photo_cover(photo, rubric, num, kicker, title, red, credit, page=None):
     top = Image.new("L", (W, 150), 0)
     td = ImageDraw.Draw(top)
     for y in range(150):
-        td.line([(0, y), (W, y)], fill=int(150 * (1 - y / 150)))
+        td.line([(0, y), (W, y)], fill=int(215 * (1 - y / 150) ** 0.7))
     img.paste(Image.new("RGB", (W, 150), INK), (0, 0), top)
     d = ImageDraw.Draw(img)
     tracked(d, M, 52, rubric.upper(), B_MED(22), PAPER, 5)
@@ -156,7 +156,7 @@ def photo_text_slide(photo, crop, rubric, num, label, sub, body, page=None, quot
     top = Image.new("L", (W, 150), 0)
     td = ImageDraw.Draw(top)
     for y in range(150):
-        td.line([(0, y), (W, y)], fill=int(150 * (1 - y / 150)))
+        td.line([(0, y), (W, y)], fill=int(215 * (1 - y / 150) ** 0.7))
     img.paste(Image.new("RGB", (W, 150), INK), (0, 0), top)
     d = ImageDraw.Draw(img)
     tracked(d, M, 52, rubric.upper(), B_MED(22), PAPER, 5)
