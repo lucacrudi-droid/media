@@ -51,8 +51,8 @@ ritagli = {
     "nobel_busto": frac(nobel, 0.0, 0.08, 1.0, 0.50),
     "test_firma": frac(test, 0.52, 0.45, 1.0, 0.95),
     "test_alto": frac(test, 0.0, 0.0, 0.5, 0.45),
-    "marte": frac(marte, 0.5, 0.05, 1.0, 0.95),
-    "osir": frac(osir, 0.0, 0.15, 1.0, 0.75),
+    "marte": frac(marte, 0.0, 0.0, 1.0, 1.0),
+    "osir": frac(osir, 0.0, 0.40, 1.0, 0.80),
 }
 
 slides = []
@@ -86,7 +86,7 @@ slides.append(fonti(pts(test, ritagli["test_alto"], R, N, "George", "quello che 
     "Si racconta che Nobel abbia letto il proprio necrologio, pubblicato per errore. Qualcuno l’ha mai trovato, quel giornale? "
     "E di cosa aveva paura un uomo che chiede di farsi tagliare le arterie dopo morto?",
     f"7/{TOT}", quote=True, credit=C_TEST), S_NOBEL + " · Il necrologio prematuro è un aneddoto tramandato: qui è una domanda, non un fatto."))
-slides.append(fonti(pts(marte, frac(marte, 0.0, 0.05, 0.5, 0.95), R, N, "Diana", "la più responsabile",
+slides.append(fonti(pts(marte, frac(marte, 0.50, 0.0, 1.0, 1.0), R, N, "Diana", "la più responsabile",
     "Restiamo sui fatti. Un testamento firmato. Un relitto mai ritrovato. Un pianeta che perde la sua aria. "
     "Il necrologio? Finché non vedo quel giornale, per me resta un racconto.",
     f"8/{TOT}", quote=True, credit=C_MARTE), S_ALL))
