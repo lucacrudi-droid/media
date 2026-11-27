@@ -36,8 +36,8 @@ S_ALL = "OSTI/DOE · Argonne National Laboratory · NobelPrize.org"
 cost, squadra, dip = foto("cp1_costruzione.jpg"), foto("squadra_1946.jpg"), foto("cp1_dipinto.jpg")
 C_COST = "CP-1 in costruzione, 1942: il 7° strato di grafite · Argonne/DOE · pubblico dominio"
 C_SQ = "La squadra di CP-1, Chicago 2/12/1946 · LANL/NSRC · CC BY-SA 4.0"
-C_HIL = "Norman Hilberry (in alto a sinistra), Chicago 2/12/1946 · LANL/NSRC · CC BY-SA 4.0"
-C_FER = "Enrico Fermi (in basso a sinistra), Chicago 2/12/1946 · LANL/NSRC · CC BY-SA 4.0"
+C_HIL = "Norman Hilberry (ultima fila, primo a sinistra), Chicago 2/12/1946 · LANL/NSRC · CC BY-SA 4.0"
+C_FER = "Enrico Fermi (prima fila, a sinistra), Chicago 2/12/1946 · LANL/NSRC · CC BY-SA 4.0"
 C_DIP = "CP-1 il 2/12/1942, ricostruzione pittorica · DOE · pubblico dominio"
 
 s = []
@@ -45,23 +45,23 @@ cop, ccop = (cost, C_COST)
 s.append(fonti(v.photo_cover(cop, R, N, "Chicago · 2 dicembre 1942 · ore 15:25",
     "Il navigatore\nitaliano.", "Era un messaggio in codice.", ccop, f"1/{TOT}") if cop is not None else
     v.text_slide(R, N, "Il navigatore italiano.", "Chicago · 2 dicembre 1942", "Era un messaggio in codice.", f"1/{TOT}"), S_ALL))
-s.append(fonti(pts(cost, frac(cost, 0, 0.1, 1, 0.9), "1942", "Carmela · la giornalista · i fatti",
+s.append(fonti(pts(cost, frac(cost, 0, 0.5, 1, 1.0), "1942", "Carmela · la giornalista · i fatti",
     "In un campo da squash abbandonato, sotto le tribune dello stadio dell’Università di Chicago, "
     "la squadra di Enrico Fermi accende la prima reazione nucleare a catena controllata e autosostenuta. "
     "Ore 15:25. Dura 28 minuti. Potenza: circa mezzo watt, appena quanto basta per una piccola lampadina.",
     f"2/{TOT}", credit=C_COST), S_OSTI + " · " + S_NOBEL))
-s.append(fonti(pts(squadra, frac(squadra, 0, 0.05, 1, 0.55), "La telefonata", "Carmela · la giornalista",
+s.append(fonti(pts(squadra, frac(squadra, 0, 0.40, 1, 0.95), "La telefonata", "Carmela · la giornalista",
     "Arthur Compton chiama James Conant a Washington.\n«Il navigatore italiano è sbarcato nel Nuovo Mondo.»\n"
     "«Com’erano gli indigeni?»\n«Molto amichevoli.»", f"3/{TOT}", credit=C_SQ), S_OSTI + " · " + S_ANL))
-s.append(fonti(pts(cost, frac(cost, 0.2, 0.3, 0.8, 0.8), "Teng", "il finanziatore",
+s.append(fonti(pts(cost, frac(cost, 0.05, 0.15, 0.95, 0.6), "Teng", "il finanziatore",
     "Mezzo watt. Non illumini nemmeno una stanza. Ma chi pagava quel campo da squash non stava comprando luce. "
     "Stava comprando il passo successivo.", f"4/{TOT}", quote=True, credit=C_COST), S_OSTI))
-s.append(fonti(pts(squadra, frac(squadra, 0, 0.0, 0.62, 0.42), "George", "quello che fa domande",
+s.append(fonti(pts(squadra, frac(squadra, 0.0, 0.31, 0.6, 0.57), "George", "quello che fa domande",
     "Sulla balconata Norman Hilberry aspettava con un’ascia, pronto a tagliare una fune e far cadere una barra di controllo. "
     "Su una piattaforma, una squadra era pronta ad allagare la pila con una soluzione di cadmio. "
     "Che cosa avevano immaginato, per prepararsi così? E chi si offre di stare lassù?",
     f"5/{TOT}", quote=True, credit=C_HIL), S_OSTI))
-s.append(fonti(pts(squadra, frac(squadra, 0, 0.45, 0.6, 0.95), "Diana", "la più responsabile",
+s.append(fonti(pts(squadra, frac(squadra, 0.03, 0.48, 0.55, 0.76), "Diana", "la più responsabile",
     "Restiamo sui fatti. Fermi aveva lasciato l’Italia nel 1938, subito dopo il Nobel, soprattutto per sfuggire alla dittatura fascista. "
     "Quella pila era un passo del Progetto Manhattan. La linea è stata oltrepassata in 28 minuti. "
     "Non esiste una barra di controllo per tornare indietro.", f"6/{TOT}", quote=True, credit=C_FER), S_NOBEL + " · " + S_OSTI))
